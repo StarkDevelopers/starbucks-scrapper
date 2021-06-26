@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc index.ts --outDir dist && node dist/index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/superagent": "^4.1.11",
+    "cheerio": "^1.0.0-rc.10",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
 }
