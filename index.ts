@@ -29,7 +29,11 @@ const stores = {};
 
     console.log(`Total ${Object.keys(stores).length} Stores found`);
 
-    fs.writeFileSync(`./stores/store_${new Date().getTime()}`, JSON.stringify(stores, null, 2));
+    if (!fs.existsSync('./stores')) {
+      fs.mkdirSync('./stores');
+    }
+
+    fs.writeFileSync(`./stores/store_${new Date().getTime()}.json`, JSON.stringify(stores, null, 2));
   } catch (error) {
     console.error(error);
   }
